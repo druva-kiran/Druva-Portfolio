@@ -1,46 +1,65 @@
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from "react";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
 
 
 function App() {
-
-  useEffect(()=>{
+  useEffect(() => {
     AOS.init({
-      duration:1500,
-      once:true,
-    })
-  })
+      duration: 1500,
+      once: true,
+    });
+  }, []);
+
   return (
-    <main>
-      {/*Gradient Image */}
+    // We set min-h-screen and text-white, but NO BACKGROUND COLOR here
+    // effectively letting the black body (from index.css) show through if set, 
+    // or we rely on the components. 
+    <div className="min-h-screen text-white relative overflow-hidden bg-black">
+      
+      {/* --- BACKGROUND EFFECTS --- */}
+      
+      {/* 1. The Gradient Image */}
       <img
-        className="absolute top-0 right-0 opacity-60 -z-10"
+        className="absolute top-0 right-0 opacity-60 z-0 pointer-events-none"
         src="/gradient.png"
-        alt="Gradient.png"
-        srcset=""
+        alt="Gradient Background"
       />
-      {/*  Blur Effect */}
+
+      {/* 2. The Torch Light (Conic Gradient) */}
       <div
         className="
-    absolute 
-    top-0 
-    right-0 
-    h-[40rem]          
-    w-[40rem]          
-    bg-[conic-gradient(from_225deg_at_100%_0%,transparent_0deg,#e99b63_20deg,transparent_40deg)] 
-    opacity-60 
-    blur-[40px] 
-    -z-10 
-    pointer-events-none
-    [mask-image:radial-gradient(circle_at_100%_0%,black_10%,transparent_70%)]
-  "
+          absolute 
+          top-0 
+          right-0 
+          h-[40rem]          
+          w-[40rem]          
+          bg-[conic-gradient(from_225deg_at_100%_0%,transparent_0deg,#e99b63_20deg,transparent_40deg)] 
+          opacity-60 
+          blur-[40px] 
+          z-0 
+          pointer-events-none
+          [mask-image:radial-gradient(circle_at_100%_0%,black_10%,transparent_70%)]
+        "
       ></div>
-      <Header />
-      <Hero />
-    </main>
+
+      {/* --- CONTENT (Sits on top of background) --- */}
+      <div className="relative z-10">
+        <Header />
+        <Hero />
+        <Skills /> 
+        <Projects />
+        <Education />
+        <Contact />
+      </div>
+      
+    </div>
   );
 }
 
