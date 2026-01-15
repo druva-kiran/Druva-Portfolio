@@ -19,16 +19,6 @@ const Header = () => {
       <nav className="hidden md:flex items-center gap-6">
         <a
           data-aos="fade-down"
-          data-aos-duration="1000" // Speed is constant
-          data-aos-delay="0"       // Starts immediately
-          className="text-base tracking-wider transition-colors hover:text-gray-300 z-50"
-          href="#"
-        >
-          Home
-        </a>
-
-        <a
-          data-aos="fade-down"
           data-aos-duration="1000"
           data-aos-delay="100" // Waits 0.1s
           className="text-base tracking-wider transition-colors hover:text-gray-300 z-50"
@@ -79,7 +69,13 @@ const Header = () => {
       </nav>
 
       {/* Mobile menu button */}
-      <div className="relative md:hidden z-50">
+      <div
+        data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="500"
+        className="relative md:hidden z-50"
+      >
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden text-3xl p-2 z-50 relative"
@@ -94,12 +90,36 @@ const Header = () => {
         >
           <nav className="flex flex-col gap-3 items-center">
             {/* Added backdrop-blur-md above for better readability on mobile */}
-            <a className="text-base tracking-wider transition-colors hover:text-gray-300 z-50" href="#">Home</a>
-            <a className="text-base tracking-wider transition-colors hover:text-gray-300 z-50" href="#">About</a>
-            <a className="text-base tracking-wider transition-colors hover:text-gray-300 z-50" href="#">Skills</a>
-            <a className="text-base tracking-wider transition-colors hover:text-gray-300 z-50" href="#">Projects</a>
-            <a className="text-base tracking-wider transition-colors hover:text-gray-300 z-50" href="#">Education</a>
-            <a className="text-base tracking-wider transition-colors hover:text-gray-300 z-50" href="#">Contact</a>
+            <a
+              className="text-base tracking-wider transition-colors hover:text-gray-300 z-50"
+              href="#"
+            >
+              About
+            </a>
+            <a
+              className="text-base tracking-wider transition-colors hover:text-gray-300 z-50"
+              href="#"
+            >
+              Skills
+            </a>
+            <a
+              className="text-base tracking-wider transition-colors hover:text-gray-300 z-50"
+              href="#"
+            >
+              Projects
+            </a>
+            <a
+              className="text-base tracking-wider transition-colors hover:text-gray-300 z-50"
+              href="#"
+            >
+              Education
+            </a>
+            <a
+              className="text-base tracking-wider transition-colors hover:text-gray-300 z-50"
+              href="#"
+            >
+              Contact
+            </a>
           </nav>
         </div>
       </div>
