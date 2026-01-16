@@ -1,16 +1,14 @@
 @import "tailwindcss";
 
-
-
-@layer base{
-  body{
-    @apply bg-black text-white relative font-sans h-screen overflow-x-hidden
+@layer base {
+  body {
+    @apply bg-black text-white relative font-sans min-h-screen overflow-x-hidden;
   }
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* Keeps the section title from hiding behind the header */
+  scroll-padding-top: 100px; 
 }
 
 
@@ -18,9 +16,13 @@ html {
   pointer-events: none;
   will-change: transform, opacity;
   backface-visibility: hidden;
-  transform: translateZ(0); /* Forces GPU Acceleration */
+  transform: translateZ(0); 
 }
 
 [data-aos].aos-animate {
   pointer-events: auto;
+}
+
+*:focus {
+  outline: none;
 }

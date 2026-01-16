@@ -34,9 +34,9 @@ const Projects = () => {
   return (
     <section id="projects" className="min-h-screen bg-black text-white py-24 px-4 lg:px-20 flex flex-col justify-center overflow-hidden">
       
-      {/* Title */}
+      {/* Title - Removed AOS for mobile, kept for desktop */}
       <div 
-        data-aos="fade-down" 
+        data-aos={window.innerWidth < 768 ? "" : "fade-down"}
         className="mb-20 border-b border-gray-800 pb-8"
       >
         <h2 className="text-4xl md:text-6xl font-light tracking-tight">
@@ -52,33 +52,45 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            data-aos="fade-up"
-            // Delay 0 on mobile for immediate response, staggered on desktop
-            data-aos-delay={window.innerWidth < 768 ? 0 : index * 100}
-            // MOBILE POP & GLOW: Added active: classes for touch feedback
+            tabIndex="0" // Essential for the "Stay Glowing" effect on mobile
+            data-aos={window.innerWidth < 768 ? "" : "fade-up"}
+            data-aos-delay={index * 100}
+            /* TRANSITION LOGIC:
+               1. hover: handles desktop.
+               2. focus: handles mobile (stays glowing after tap).
+               3. active: handles the instant "press" feel.
+            */
             className="
-              group flex flex-col justify-between p-8 border-l-2 border-gray-800 bg-transparent transition-all duration-300 
-              hover:border-orange-400 hover:bg-zinc-900/20 hover:translate-x-2
-              active:scale-95 active:bg-orange-500/10 active:border-orange-400 active:shadow-[0_0_20px_rgba(251,146,60,0.2)]
-              touch-manipulation
+              group flex flex-col justify-between p-8 border-l-2 border-gray-800 bg-transparent 
+              transition-all duration-500 ease-out outline-none touch-manipulation
+              
+              /* Desktop Hover */
+              md:hover:border-orange-400 md:hover:bg-zinc-900/20 md:hover:translate-x-2
+              
+              /* Mobile Persistent Focus (The Glow that stays) */
+              focus:bg-zinc-900/40 focus:border-orange-400 focus:scale-[1.02] 
+              focus:shadow-[0_0_40px_rgba(251,146,60,0.2)]
+              
+              /* Instant Press Feedback */
+              active:scale-95
             "
           >
             <div>
               {/* Header */}
               <div className="flex justify-between items-start mb-6">
-                <span className="text-xs font-mono text-gray-500 uppercase tracking-widest group-hover:text-orange-300 group-active:text-orange-300 transition-colors">
+                <span className="text-xs font-mono text-gray-500 uppercase tracking-widest group-hover:text-orange-300 group-focus:text-orange-300 transition-colors">
                   0{project.id} / {project.category}
                 </span>
-                <span className="text-xs px-2 py-1 border border-gray-800 text-gray-400 rounded-full group-hover:border-orange-400/50 group-active:border-orange-400 transition-all">
+                <span className="text-xs px-2 py-1 border border-gray-800 text-gray-400 rounded-full group-hover:border-orange-400/50 group-focus:border-orange-400 transition-all">
                   {project.status}
                 </span>
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-300 group-active:text-orange-300 transition-colors duration-300">
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-300 group-focus:text-orange-300 transition-colors duration-300">
                 {project.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-8 text-sm group-hover:text-gray-300 group-active:text-gray-300 transition-colors">
+              <p className="text-gray-400 leading-relaxed mb-8 text-sm group-hover:text-gray-300 group-focus:text-gray-200 transition-colors">
                 {project.description}
               </p>
             </div>
@@ -87,17 +99,17 @@ const Projects = () => {
             <div>
               <div className="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-sm text-gray-500 font-mono">
                 {project.tech.map((t, i) => (
-                  <span key={i} className="hover:text-white group-active:text-white transition-colors cursor-default">#{t}</span>
+                  <span key={i} className="group-hover:text-white group-focus:text-orange-200 transition-colors cursor-default">#{t}</span>
                 ))}
               </div>
               
               <a 
                 href={project.link}
-                className="inline-flex items-center gap-2 text-white text-sm font-semibold group-hover:text-orange-300 group-active:text-orange-300 transition-colors"
+                className="inline-flex items-center gap-2 text-white text-sm font-semibold group-hover:text-orange-300 group-focus:text-orange-400 transition-colors"
               >
                 <i className='bx bxl-github text-lg'></i>
                 <span>View Source</span>
-                <i className='bx bx-right-arrow-alt text-xl opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-active:opacity-100 group-active:translate-x-0 transition-all duration-300'></i>
+                <i className='bx bx-right-arrow-alt text-xl opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-focus:opacity-100 group-focus:translate-x-0 transition-all duration-300'></i>
               </a>
             </div>
           </div>

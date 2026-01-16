@@ -7,7 +7,7 @@ const Contact = () => {
       className="min-h-screen bg-black text-white flex items-center justify-center px-4 relative overflow-hidden"
     >
       
-      {/* Background Ambience - HIDDEN ON MOBILE to prevent GPU overdraw */}
+      {/* Background Ambience - Sharp Light enabled via background image/torch in App.js */}
       <div className="hidden md:block absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className="absolute top-[20%] left-[20%] w-[400px] h-[400px] bg-orange-600/10 rounded-full blur-[100px]"></div>
         <div className="absolute bottom-[20%] right-[20%] w-[300px] h-[300px] bg-blue-600/5 rounded-full blur-[100px]"></div>
@@ -15,11 +15,17 @@ const Contact = () => {
 
       {/* --- THE MAIN CARD --- */}
       <div 
-        data-aos="fade-up"
+        tabIndex="0" // Makes the card focusable on mobile tap
+        data-aos={window.innerWidth < 768 ? "" : "fade-up"}
         className="
           relative z-10 w-full max-w-3xl bg-zinc-900/40 border border-white/10 rounded-3xl p-8 md:p-16 text-center 
-          shadow-2xl md:backdrop-blur-xl transition-all duration-500
-          hover:border-orange-500/30
+          shadow-2xl transition-all duration-500 outline-none
+          
+          /* Desktop Hover */
+          md:backdrop-blur-xl md:hover:border-orange-500/30
+          
+          /* Mobile Persistent Glow */
+          focus:border-orange-500/50 focus:bg-zinc-900 focus:shadow-[0_0_50px_rgba(251,146,60,0.15)]
         "
       >
         
@@ -46,14 +52,14 @@ const Contact = () => {
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           
-          {/* Email Button - MOBILE POP */}
+          {/* Email Button */}
           <a 
             href="mailto:ffdruva0@gmail.com"
             className="
               group w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-bold text-lg 
               transition-all duration-300 touch-manipulation
               hover:bg-orange-400 hover:shadow-[0_0_30px_rgba(251,146,60,0.5)]
-              active:scale-95 active:bg-orange-500 active:shadow-inner
+              active:scale-95 active:bg-orange-500
               flex items-center justify-center gap-2
             "
           >
@@ -61,7 +67,7 @@ const Contact = () => {
             <i className='bx bx-right-arrow-alt text-xl transition-transform duration-300 group-hover:translate-x-1'></i>
           </a>
           
-          {/* LinkedIn Button - MOBILE POP */}
+          {/* LinkedIn Button */}
           <a 
             href="https://www.linkedin.com/in/druva-kiran-j/"
             target="_blank"
