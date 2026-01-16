@@ -13,7 +13,7 @@ const Education = () => {
     },
     {
       id: 2,
-      institution: "Government Higher Secondary School, Mulli Nagar",
+      institution: "Government Higher Secondary School, Mullai Nagar",
       degree: "Higher Secondary (12th Grade)",
       year: "Completed",
       score: "76%",

@@ -46,7 +46,7 @@ const Hero = () => {
             <br />
             &nbsp;&nbsp;<span className="text-blue-300">role</span>: <span className="text-green-300">"AI Engineer"</span>,
             <br />
-            &nbsp;&nbsp;<span className="text-blue-300">college</span>: <span className="text-green-300">"E.P.M.C.E"</span>,
+            &nbsp;&nbsp;<span className="text-blue-300">college</span>: <span className="text-green-300">"PMC College"</span>,
             <br />
             &nbsp;&nbsp;<span className="text-blue-300">learning</span>: [<span className="text-green-300">"Neural Nets"</span>, <span className="text-green-300">"DevOps"</span>],
             <br />
