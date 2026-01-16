@@ -7,7 +7,6 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState("about");
   const [showNav, setShowNav] = useState(false);
 
-
   const navLinks = [
     { name: "About", id: "about" },
     { name: "Skills", id: "skills" },
@@ -47,7 +46,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 w-full flex justify-between items-center py-4 px-4 lg:px-20 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-black/90 backdrop-blur-md border-b border-white/5 shadow-lg"
+          ? "bg-black/95 md:backdrop-blur-md border-b border-white/5 shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -67,7 +66,11 @@ const Header = () => {
             relative flex items-center justify-center w-10 h-10
             bg-zinc-900 rounded-xl border border-white/10
             transition-all duration-500 ease-out
-            ${showNav ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"}
+            ${
+              showNav
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-y-10"
+            }
           `}
         >
           <i
@@ -81,7 +84,9 @@ const Header = () => {
           className={`
             text-2xl font-bold tracking-wide text-white
             transition-all duration-500 ease-out
-            ${showNav ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
+            ${
+              showNav ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }
           `}
           style={{ transitionDelay: "100ms" }}
         >
@@ -101,7 +106,11 @@ const Header = () => {
             className={`
               text-base tracking-wider
               transition-all duration-500 ease-out
-              ${showNav ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-20"}
+              ${
+                showNav
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 -translate-y-20"
+              }
             `}
             style={{
               // Math: (Index 0 + 2) * 100 = 200ms start time
@@ -128,7 +137,7 @@ const Header = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="text-3xl p-2 text-white md:hidden"
           // Keep AOS here if you still want it, though standard CSS transition is cleaner
-          data-aos="fade-left" 
+          data-aos="fade-left"
         >
           <i className={`bx ${isMenuOpen ? "bx-x" : "bx-menu-alt-right"}`}></i>
         </button>
@@ -136,8 +145,8 @@ const Header = () => {
         {/* Mobile Dropdown */}
         <div
           className={`absolute top-full right-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg shadow-xl p-4 border border-gray-800 transition-all duration-300 origin-top-right ${
-            isMenuOpen 
-              ? "opacity-100 scale-100 translate-y-0 visible" 
+            isMenuOpen
+              ? "opacity-100 scale-100 translate-y-0 visible"
               : "opacity-0 scale-95 -translate-y-2 invisible"
           }`}
         >

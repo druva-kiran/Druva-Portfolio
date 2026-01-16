@@ -8,7 +8,7 @@ const Education = () => {
       degree: "B.Tech in Artificial Intelligence & Data Science",
       year: "2024 - 2028",
       score: "Pursuing",
-      icon: "bx-brain", // AI Icon
+      icon: "bx-brain",
       description: "Specializing in Machine Learning algorithms, Data Structures, and Predictive Analytics.",
     },
     {
@@ -32,7 +32,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="min-h-screen bg-black text-white py-24 px-4 lg:px-20 flex flex-col justify-center">
+    <section id="education" className="min-h-screen bg-black text-white py-24 px-4 lg:px-20 flex flex-col justify-center overflow-hidden">
       
       {/* Title */}
       <div data-aos="fade-down" className="mb-20 border-b border-gray-800 pb-8">
@@ -52,24 +52,36 @@ const Education = () => {
             <div
               key={edu.id}
               data-aos="fade-right"
-              data-aos-delay={index * 150}
-              className="relative pl-12 group"
+              data-aos-delay={window.innerWidth < 768 ? 0 : index * 150}
+              className="relative pl-12 group touch-manipulation"
             >
-              {/* Timeline Dot */}
-              <div className="absolute left-[-8px] top-2 w-4 h-4 rounded-full bg-black border-2 border-orange-500 group-hover:bg-orange-400 group-hover:scale-125 transition-all duration-300 shadow-[0_0_10px_#fb923c]"></div>
+              {/* Timeline Dot - Glows on card touch */}
+              <div className="absolute left-[-8px] top-2 w-4 h-4 rounded-full bg-black border-2 border-orange-500 
+                group-hover:bg-orange-400 group-hover:scale-125 
+                group-active:bg-orange-400 group-active:scale-125
+                transition-all duration-300 shadow-[0_0_10px_#fb923c]">
+              </div>
 
-              {/* Card Content */}
-              <div className="flex flex-col md:flex-row gap-6 items-start p-6 rounded-xl border border-white/5 bg-zinc-900/20 hover:bg-zinc-900/40 hover:border-orange-500/30 transition-all duration-300 hover:translate-x-2">
+              {/* Card Content - MOBILE POP & GLOW */}
+              <div className="
+                flex flex-col md:flex-row gap-6 items-start p-6 rounded-xl border border-white/5 bg-zinc-900/40
+                transition-all duration-300 
+                md:hover:bg-zinc-900/60 md:hover:border-orange-500/30 md:hover:translate-x-2
+                active:scale-[0.98] active:bg-zinc-900 active:border-orange-500/50 active:shadow-[0_0_20px_rgba(251,146,60,0.15)]
+              ">
                 
                 {/* Icon Box */}
-                <div className="p-4 bg-zinc-800 rounded-lg text-orange-300 text-3xl shrink-0 group-hover:text-white group-hover:bg-orange-500 transition-colors duration-300">
+                <div className="p-4 bg-zinc-800 rounded-lg text-orange-300 text-3xl shrink-0 
+                  group-hover:text-white group-hover:bg-orange-500 
+                  group-active:text-white group-active:bg-orange-500
+                  transition-colors duration-300">
                   <i className={`bx ${edu.icon}`}></i>
                 </div>
 
                 {/* Text Details */}
                 <div className="flex-1">
-                  <div className="flex flex-wrap justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold text-gray-100 group-hover:text-orange-300 transition-colors">
+                  <div className="flex flex-wrap justify-between items-start mb-2 gap-2">
+                    <h3 className="text-xl font-bold text-gray-100 group-hover:text-orange-300 group-active:text-orange-300 transition-colors">
                       {edu.degree}
                     </h3>
                     <span className="text-xs font-mono py-1 px-2 border border-gray-700 rounded text-gray-400">
@@ -79,12 +91,12 @@ const Education = () => {
                   
                   <h4 className="text-lg text-gray-400 mb-4">{edu.institution}</h4>
                   
-                  <p className="text-sm text-gray-500 mb-4 leading-relaxed">
+                  <p className="text-sm text-gray-500 mb-4 leading-relaxed group-hover:text-gray-400 group-active:text-gray-400 transition-colors">
                     {edu.description}
                   </p>
 
                   {/* Score Badge */}
-                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full">
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
                     <i className='bx bx-award'></i>
                     <span>Score: {edu.score}</span>
                   </div>

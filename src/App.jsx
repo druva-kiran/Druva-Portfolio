@@ -12,29 +12,27 @@ import Contact from "./components/Contact";
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1500,
+      duration: 800, 
       once: true,
+      // Helps AOS trigger more reliably on mobile scroll
+      anchorPlacement: 'top-bottom', 
     });
   }, []);
 
   return (
-    // We set min-h-screen and text-white, but NO BACKGROUND COLOR here
-    // effectively letting the black body (from index.css) show through if set, 
-    // or we rely on the components. 
     <div className="min-h-screen text-white relative overflow-hidden bg-black">
       
-      {/* --- BACKGROUND EFFECTS --- */}
-      
-      {/* 1. The Gradient Image */}
+      {/* 1. The Gradient Image - Generally okay for performance */}
       <img
         className="absolute top-0 right-0 opacity-60 z-0 pointer-events-none"
         src="/gradient.png"
         alt="Gradient Background"
       />
 
-      {/* 2. The Torch Light (Conic Gradient) */}
+      {/* 2. The Torch Light - OPTIMIZED: hidden on mobile (hidden) and shown on desktop (md:block) */}
       <div
         className="
+          hidden md:block
           absolute 
           top-0 
           right-0 
@@ -49,7 +47,6 @@ function App() {
         "
       ></div>
 
-      {/* --- CONTENT (Sits on top of background) --- */}
       <div className="relative z-10">
         <Header />
         <Hero />
@@ -58,7 +55,6 @@ function App() {
         <Education />
         <Contact />
       </div>
-      
     </div>
   );
 }
