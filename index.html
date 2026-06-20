@@ -1,13 +1,904 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Druva | Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Druva Kiran J | AI & Data Science Student & Developer</title>
+  <meta name="description"
+    content="Professional portfolio of Druva Kiran J, a B.Tech AI & Data Science Student and Full-Stack Developer specializing in machine learning systems, data analytics, and modern web apps." />
+  <meta name="keywords"
+    content="Druva Kiran J, Druva Kiran, AI Student, Data Science, Full-Stack Developer, Machine Learning Explorer, React, Python, Node.js" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- Custom Style Sheet -->
+  <link href="/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Floating Background Constellation Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="#hero" class="logo">
+        <i class="bx bx-terminal"></i>
+        <span>Druva.</span>
+      </a>
+
+      <nav id="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Capabilities</a>
+        <a href="#projects" class="nav-link">Works</a>
+        <a href="#resume" class="nav-link">Resume</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+        <i class="bx bx-menu-alt-right"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section id="hero" class="reveal hero-section">
+      <div class="hero-centered-content">
+        <div class="hero-profile-header-centered">
+          <div class="profile-avatar-wrapper">
+            <img src="/profile.jpg" alt="Druva Kiran J" class="profile-avatar" />
+            <span class="active-pulse-ring"></span>
+          </div>
+          <div class="hero-profile-meta-centered">
+            <div class="hero-status">
+              <i class="bx bx-bolt-circle"></i>
+              <span>AI & Data Science Student</span>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="hero-main-title font-display">
+          Hi! I'm <span class="highlight-gradient">Druva Kiran J</span>
+        </h1>
+
+        <h3 class="hero-subtitle">
+          A <span class="text-white font-medium">Third-year B.Tech student</span> specializing in <span
+            class="text-white font-medium">Artificial Intelligence & Data Science</span>. <br />
+          Passionate about training neural networks, designing database solutions, and building high-performance modern
+          web applications.
+        </h3>
+
+        <!-- Glowing Line Separator like Ramkumar's -->
+        <div class="glow-line-container">
+          <div class="glow-line-blur"></div>
+          <div class="glow-line-solid"></div>
+          <div class="glow-line-accent-blur"></div>
+          <div class="glow-line-accent-solid"></div>
+        </div>
+
+        <div class="hero-ctas centered">
+          <a href="#projects" class="btn btn-primary">Inspect Works</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+
+        <div class="hero-socials centered">
+          <a href="https://github.com/druva-kiran" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+              class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/druva-kiran-j/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+          <a href="mailto:ffdruva0@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="glowing-divider"></div>
+
+    <!-- About Section -->
+    <section id="about" class="reveal">
+      <div class="section-grid">
+
+        <div class="section-label">
+          <div class="section-label-sticky">
+            <h2>About me<span>.</span></h2>
+            <p>Background, professional focus, and dynamic capabilities.</p>
+          </div>
+        </div>
+
+        <div class="section-content">
+          <div class="about-layout-grid">
+
+            <!-- Left Column: Bio Details -->
+            <div class="about-bio-container">
+              <h3 class="about-bio-greeting font-display">
+                Hello, I'm Druva Kiran J, also known as <a href="https://github.com/druva-kiran" target="_blank"
+                  rel="noopener noreferrer" class="about-link-highlight">druva-kiran</a> in the tech community.
+              </h3>
+
+              <p class="about-bio-paragraph">
+                As an <span class="text-white">AI & Data Science Student</span>, I leverage frameworks like <span
+                  class="text-white">PyTorch, Scikit-Learn, and Python data libraries (Pandas, Numpy, Matplotlib)</span>
+                to transform raw datasets into intelligent, actionable insights. I specialize in building predictive
+                models, computer vision pipelines, and secure cloud microservices.
+              </p>
+
+              <p class="about-bio-paragraph">
+                My technical toolkit includes <span class="text-white">Python, JavaScript (React / Node.js), and
+                  SQL</span>. I'm dedicated to writing clean, professional code, designing database schemas, and setting
+                up automated Linux shell operations.
+              </p>
+
+              <p class="about-bio-paragraph">
+                I thrive on solving complex engineering problems and delivering scalable digital solutions. My
+                commitment to continuous learning and excellence defines every project I undertake, from encrypted
+                command-line tools to WebGL neural network visualizers.
+              </p>
+
+              <div class="about-bio-cta-container">
+                <a href="https://www.linkedin.com/in/druva-kiran-j/" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-secondary">
+                  <span>Connect on LinkedIn</span>
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Model Weight Card -->
+            <div class="about-model-container">
+              <div class="model-card">
+                <div class="model-card-header">
+                  <span class="model-card-title">MODEL: druva_practitioner.bin</span>
+                  <span class="model-card-dot"></span>
+                </div>
+
+                <div class="model-card-body">
+                  <div class="model-stats">
+                    <div class="stat-box">
+                      <span class="stat-label">Loss Rate</span>
+                      <span class="stat-val">0.021</span>
+                    </div>
+                    <div class="stat-box">
+                      <span class="stat-label">Epochs</span>
+                      <span class="stat-val">3 / 4 Years</span>
+                    </div>
+                    <div class="stat-box">
+                      <span class="stat-label">Status</span>
+                      <span class="stat-val" style="color: #10b981;">Converged</span>
+                    </div>
+                  </div>
+
+                  <!-- Canvas Curve Graph -->
+                  <div class="graph-container">
+                    <canvas id="weights-canvas"></canvas>
+                  </div>
+
+                  <!-- Sliders -->
+                  <div class="weight-controls">
+                    <div class="slider-group">
+                      <div class="slider-header">
+                        <span class="slider-label">Python (AI & ML)</span>
+                        <span class="slider-val" id="val-ai">85%</span>
+                      </div>
+                      <input type="range" class="weight-slider" id="slider-ai" min="10" max="100" value="85"
+                        aria-label="Python AI weight" />
+                    </div>
+
+                    <div class="slider-group">
+                      <div class="slider-header">
+                        <span class="slider-label">JavaScript (Web Dev)</span>
+                        <span class="slider-val" id="val-web">75%</span>
+                      </div>
+                      <input type="range" class="weight-slider" id="slider-web" min="10" max="100" value="75"
+                        aria-label="JavaScript Web weight" />
+                    </div>
+
+                    <div class="slider-group">
+                      <div class="slider-header">
+                        <span class="slider-label">AWS & SQL (Systems)</span>
+                        <span class="slider-val" id="val-sys">65%</span>
+                      </div>
+                      <input type="range" class="weight-slider" id="slider-sys" min="10" max="100" value="65"
+                        aria-label="AWS and SQL weight" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="glowing-divider"></div>
+
+    <!-- Capabilities (Bento Skills) Section -->
+    <section id="skills" class="reveal">
+      <div class="section-grid">
+
+        <div class="section-label">
+          <div class="section-label-sticky">
+            <h2>Capabilities<span>.</span></h2>
+            <p>Clean capability matrix showing domains, languages, tools, and expertise.</p>
+          </div>
+        </div>
+
+        <div class="section-content">
+          <!-- Bento grid replacing long list -->
+          <div class="bento-grid">
+
+            <!-- Bento Card 1: AI & ML -->
+            <div class="bento-card-container">
+              <div class="bento-box">
+                <div>
+                  <div class="bento-box-header">
+                    <i class="bx bx-brain"></i>
+                    <h3>Artificial Intelligence & ML</h3>
+                  </div>
+                  <p class="bento-desc">
+                    Trained predictive classification engines and custom YOLO v8 surveillance streams. Integrated
+                    PyTorch batches and Jupyter data cleaner pipelines.
+                  </p>
+                </div>
+                <div class="bento-skills-tags" style="margin-top: 20px; margin-bottom: 0;">
+                  <span class="bento-tag">Python</span>
+                  <span class="bento-tag">PyTorch</span>
+                  <span class="bento-tag">Scikit-Learn</span>
+                  <span class="bento-tag">Jupyter</span>
+                  <span class="bento-tag">Pandas</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Card 2: Full Stack -->
+            <div class="bento-card-container">
+              <div class="bento-box">
+                <div>
+                  <div class="bento-box-header">
+                    <i class="bx bx-code-alt"></i>
+                    <h3>Full-Stack Web</h3>
+                  </div>
+                  <p class="bento-desc">
+                    Developed responsive user interfaces in React. Structured REST APIs, secure token auth routines, and
+                    database controllers using Node.js and Express.
+                  </p>
+                </div>
+                <div class="bento-skills-tags" style="margin-top: 20px; margin-bottom: 0;">
+                  <span class="bento-tag">React</span>
+                  <span class="bento-tag">JavaScript</span>
+                  <span class="bento-tag">Node.js</span>
+                  <span class="bento-tag">Express</span>
+                  <span class="bento-tag">CSS3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Card 3: Cloud & DB -->
+            <div class="bento-card-container">
+              <div class="bento-box">
+                <div>
+                  <div class="bento-box-header">
+                    <i class="bx bx-data"></i>
+                    <h3>Database & Cloud</h3>
+                  </div>
+                  <p class="bento-desc">
+                    Designed relational database schemas, managed transactions, and deployed web files on AWS EC2 nodes
+                    using S3 storage buckets.
+                  </p>
+                </div>
+                <div class="bento-skills-tags" style="margin-top: 20px; margin-bottom: 0;">
+                  <span class="bento-tag">MySQL</span>
+                  <span class="bento-tag">SQL</span>
+                  <span class="bento-tag">AWS EC2</span>
+                  <span class="bento-tag">S3 Bucket</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Card 4: Systems & Tooling -->
+            <div class="bento-card-container">
+              <div class="bento-box">
+                <div>
+                  <div class="bento-box-header">
+                    <i class="bx bx-cog"></i>
+                    <h3>Systems & Tooling</h3>
+                  </div>
+                  <p class="bento-desc">
+                    Wrote admin Bash scripts for cron tasks and file transfers. Proficient with Linux command
+                    environments, Git version logs, and branch sync management.
+                  </p>
+                </div>
+                <div class="bento-skills-tags" style="margin-top: 20px; margin-bottom: 0;">
+                  <span class="bento-tag">Linux</span>
+                  <span class="bento-tag">Bash Scripts</span>
+                  <span class="bento-tag">Git</span>
+                  <span class="bento-tag">GitHub</span>
+                  <span class="bento-tag">SSH</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="glowing-divider"></div>
+
+    <!-- Works Section -->
+    <section id="projects" class="reveal">
+      <div class="section-grid">
+
+        <div class="section-label">
+          <div class="section-label-sticky">
+            <h2>Works<span>.</span></h2>
+            <p>A handpicked group of systems, deep learning tools, and web visuals built from scratch.</p>
+          </div>
+        </div>
+
+        <div class="section-content">
+          <!-- 3D Tilting Cards Grid -->
+          <div class="projects-grid">
+
+            <!-- Card 1: DawnOS -->
+            <div class="project-card-container" data-project-id="1">
+              <div class="project-card">
+                <!-- Project Preview Mockup -->
+                <div class="project-preview"
+                  style="position: relative; overflow: hidden; height: 120px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.4);">
+                  <img src="/projects/dawnos-hero.png" alt="DawnOS Screenshot"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease;"
+                    class="project-img-preview" />
+                </div>
+
+                <div>
+                  <div class="project-card-header">
+                    <span class="project-card-cat">System Engineering</span>
+                    <span class="project-card-status">Complete Run</span>
+                  </div>
+                  <h3 class="project-card-title">DawnOS</h3>
+                  <p class="project-card-desc">A complete, opinionated Arch Linux desktop experience built on Hyprland.
+                    Clone it, run one command, and get a provisioned compositor setup.</p>
+                </div>
+
+                <div>
+                  <div class="project-card-tags">
+                    <span class="project-card-tag">Arch Linux</span>
+                    <span class="project-card-tag">Hyprland</span>
+                    <span class="project-card-tag">Bash</span>
+                  </div>
+                  <a href="#" class="project-card-btn" data-project-action="1">
+                    <span>View Case Study</span>
+                    <i class="bx bx-right-arrow-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Predictive Inventory Engine -->
+            <div class="project-card-container" data-project-id="2">
+              <div class="project-card">
+                <!-- Project Preview Mockup -->
+                <div class="project-preview"
+                  style="position: relative; overflow: hidden; height: 120px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.4);">
+                  <img src="/projects/PIE.png" alt="Predictive Inventory Engine Screenshot"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease;"
+                    class="project-img-preview" />
+                </div>
+
+                <div>
+                  <div class="project-card-header">
+                    <span class="project-card-cat">AI & Data Science</span>
+                    <span class="project-card-status">Active Dev</span>
+                  </div>
+                  <h3 class="project-card-title">Predictive Inventory</h3>
+                  <p class="project-card-desc">A machine learning engine that forecasts product demand trends based on
+                    sales history to optimize warehousing and logistics limit buffers.</p>
+                </div>
+
+                <div>
+                  <div class="project-card-tags">
+                    <span class="project-card-tag">Python</span>
+                    <span class="project-card-tag">Scikit-Learn</span>
+                    <span class="project-card-tag">SQL</span>
+                  </div>
+                  <a href="#" class="project-card-btn" data-project-action="2">
+                    <span>View Case Study</span>
+                    <i class="bx bx-right-arrow-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: fanctl -->
+            <div class="project-card-container" data-project-id="3">
+              <div class="project-card">
+                <!-- Project Preview Mockup -->
+                <div class="project-preview terminal-preview" style="height: 120px; font-size: 7.5px; line-height: 1.05; padding: 6px 10px;">
+                  <div class="terminal-preview-header" style="margin-bottom: 2px;">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="terminal-preview-content" style="font-family: monospace; color: #a1a1aa; white-space: pre;">==========================================
+       NBFC Fan Speed Controller
+==========================================
+Select fan speed:
+  <span style="color: #6366f1;">[1] Auto (default)</span>
+  <span style="color: #38bdf8;">[2] 25%</span>
+  <span style="color: #38bdf8;">[3] 50%</span>
+  <span style="color: #38bdf8;">[4] 75%</span>
+  <span style="color: #38bdf8;">[5] 100%</span>
+  <span style="color: #10b981;">[6] Show status</span>
+  <span style="color: #ef4444;">[0] Exit</span></div>
+                </div>
+
+                <div>
+                  <div class="project-card-header">
+                    <span class="project-card-cat">Systems Automation</span>
+                    <span class="project-card-status">Complete Run</span>
+                  </div>
+                  <h3 class="project-card-title">fanctl</h3>
+                  <p class="project-card-desc">An auto-installer and active thermal speed daemon that interfaces with
+                    laptop ACPI registers to regulate temperatures on Linux machines.</p>
+                </div>
+
+                <div>
+                  <div class="project-card-tags">
+                    <span class="project-card-tag">Linux</span>
+                    <span class="project-card-tag">Bash</span>
+                    <span class="project-card-tag">Systemd</span>
+                  </div>
+                  <a href="#" class="project-card-btn" data-project-action="3">
+                    <span>View Case Study</span>
+                    <i class="bx bx-right-arrow-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="glowing-divider"></div>
+
+    <!-- Resume Section -->
+    <section id="resume" class="reveal">
+      <div class="section-grid">
+
+        <div class="section-label">
+          <div class="section-label-sticky">
+            <h2>Resume<span>.</span></h2>
+            <p>Academic timeline, technical certifications, and future growth objectives available to read or export.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-content">
+          <!-- Tabs -->
+          <div class="resume-tabs">
+            <button class="resume-tab-btn active" data-tab="timeline">Academic Timeline</button>
+            <button class="resume-tab-btn" data-tab="cv">Full CV Document</button>
+          </div>
+
+          <!-- Pane 1: Academic Timeline -->
+          <div class="resume-content-pane active" id="resume-timeline">
+            <div class="timeline">
+
+              <div class="timeline-item">
+                <div class="timeline-meta">
+                  <span class="timeline-year">2024 - 2028</span>
+                </div>
+                <div class="timeline-details">
+                  <h3>B.Tech in Artificial Intelligence & Data Science</h3>
+                  <h4>Er. Perumal Manimekalai College of Engineering</h4>
+                  <p>3rd Year undergraduate. Deepening knowledge in machine learning model structure, database
+                    administration, automated shell operations, and modern web applications.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-meta">
+                  <span class="timeline-year">Completed 2024</span>
+                </div>
+                <div class="timeline-details">
+                  <h3>Higher Secondary School Education (12th Grade)</h3>
+                  <h4>Government Higher Secondary School, Mullai Nagar</h4>
+                  <p>Graduated with a score of 76%. Solid grounding in Mathematics, Physics, Chemistry, and basic
+                    Computer Science algorithms.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-meta">
+                  <span class="timeline-year">Completed 2022</span>
+                </div>
+                <div class="timeline-details">
+                  <h3>Secondary School Certificate (10th Grade)</h3>
+                  <h4>Green Valley Matric Hr Sec School, Avalapalli</h4>
+                  <p>Graduated with a score of 72%. Focused on mathematical logic, geometry, and general physical
+                    sciences.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Pane 2: Full CV Sheet -->
+          <div class="resume-content-pane" id="resume-cv">
+            <div class="cv-sheet">
+
+              <div class="cv-header">
+                <div class="cv-title">
+                  <h1>Druva Kiran J</h1>
+                  <p>AI & Data Science Student & Developer</p>
+                </div>
+                <div class="cv-contact">
+                  <p><i class="bx bx-envelope"></i> ffdruva0@gmail.com</p>
+                  <p><i class="bx bxl-linkedin-square"></i> linkedin.com/in/druva-kiran-j</p>
+                  <p><i class="bx bxl-github"></i> github.com/druva-kiran</p>
+                </div>
+              </div>
+
+              <div class="cv-section">
+                <h3>Professional Profile</h3>
+                <p>Ambitious 3rd year B.Tech Artificial Intelligence and Data Science undergraduate. Highly motivated in
+                  cloud infrastructure design, database layouts, machine learning model architectures, and clean
+                  responsive web applications.</p>
+              </div>
+
+              <div class="cv-section">
+                <h3>Academic Education</h3>
+
+                <div class="cv-edu-item">
+                  <div class="cv-edu-name">
+                    <h4>B.Tech in Artificial Intelligence & Data Science</h4>
+                    <p>Er. Perumal Manimekalai College of Engineering</p>
+                  </div>
+                  <div class="cv-edu-year">
+                    <p>2024 - 2028</p>
+                    <p style="color: var(--indigo-glow); font-weight: 600;">Pursuing (3rd Year)</p>
+                  </div>
+                </div>
+
+                <div class="cv-edu-item">
+                  <div class="cv-edu-name">
+                    <h4>Higher Secondary Education (12th Grade)</h4>
+                    <p>Government Higher Secondary School, Mullai Nagar</p>
+                  </div>
+                  <div class="cv-edu-year">
+                    <p>2024</p>
+                    <p>76%</p>
+                  </div>
+                </div>
+
+                <div class="cv-edu-item">
+                  <div class="cv-edu-name">
+                    <h4>Secondary School Certificate (10th Grade)</h4>
+                    <p>Green Valley Matric Hr Sec School, Avalapalli</p>
+                  </div>
+                  <div class="cv-edu-year">
+                    <p>2022</p>
+                    <p>72%</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cv-section">
+                <h3>Technical Toolkit</h3>
+                <div class="cv-grid">
+                  <div class="cv-grid-item">
+                    <h4>Languages</h4>
+                    <p>Python, JS, SQL</p>
+                  </div>
+                  <div class="cv-grid-item">
+                    <h4>Frontend</h4>
+                    <p>React, HTML5, CSS3, Tailwind</p>
+                  </div>
+                  <div class="cv-grid-item">
+                    <h4>Backend</h4>
+                    <p>Node.js, Express.js</p>
+                  </div>
+                  <div class="cv-grid-item">
+                    <h4>Cloud & Tools</h4>
+                    <p>AWS, MySQL, Git, Linux Terminal</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cv-section">
+                <h3>Core Coursework</h3>
+                <p style="font-size: 13px;">Deep Learning, MLOps Automation, AWS Cloud Infrastructures, Next.js
+                  Architectures, Software System Design, Relational Database management, Data Structures & Algorithms.
+                </p>
+              </div>
+
+              <div class="cv-section" style="margin-bottom: 0;">
+                <h3>Developer Goals (2026)</h3>
+                <p style="font-size: 13px; margin-bottom: 8px;">• <strong>AI-Powered Products:</strong> Deploying
+                  computer vision models and real-time processing streams.</p>
+                <p style="font-size: 13px; margin-bottom: 8px;">• <strong>Full-Stack Mastery:</strong> Creating secure
+                  server microservices and lightweight frontends.</p>
+                <p style="font-size: 13px; margin-bottom: 8px;">• <strong>System Design:</strong> Studying caching
+                  layers, load balancing, and connection pools.</p>
+                <p style="font-size: 13px; margin-bottom: 8px;">• <strong>Open Source:</strong> Contributing code to
+                  community repositories and projects.</p>
+                <p style="font-size: 13px;">• <strong>Cloud Architecture:</strong> Setting up secure scalable
+                  architectures on AWS.</p>
+              </div>
+
+            </div>
+
+            <div style="display: flex; justify-content: center; margin-top: 32px;">
+              <button class="btn btn-secondary" onclick="window.print()"><i class="bx bx-printer"></i> Print / Save as
+                PDF</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="glowing-divider"></div>
+
+    <!-- Contact (Inquiry) Section -->
+    <section id="contact" class="reveal" style="border-bottom: none;">
+      <div class="section-grid">
+
+        <div class="section-label">
+          <div class="section-label-sticky">
+            <h2>Inquiry<span>.</span></h2>
+            <p>Drop a message to initiate project cooperation, or connect via professional socials.</p>
+          </div>
+        </div>
+
+        <div class="section-content">
+          <div class="contact-layout">
+
+            <!-- Info channels -->
+            <div class="contact-info">
+              <div>
+                <h3 style="font-size: 20px; margin-bottom: 12px;">Direct Coordinates</h3>
+                <p style="font-size: 13px; margin-bottom: 24px;">Submit the validated contact form for internship
+                  postings, or connect through the coordinates listed below.</p>
+
+                <div class="contact-channels">
+                  <a href="mailto:ffdruva0@gmail.com" class="contact-channel">
+                    <div><i class="bx bx-envelope"></i></div>
+                    <span>ffdruva0@gmail.com</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/druva-kiran-j/" target="_blank" rel="noopener noreferrer"
+                    class="contact-channel">
+                    <div><i class="bx bxl-linkedin-square"></i></div>
+                    <span>linkedin.com/in/druva-kiran-j</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive IDE Code inquiry form -->
+            <div class="contact-form-container">
+
+              <div class="code-form-editor">
+                <div class="editor-header">
+                  <span class="editor-file-tab"><i class="bx bx-file"></i> collaborate.json</span>
+                  <div class="editor-controls">
+                    <span class="editor-control-dot"></span>
+                    <span class="editor-control-dot"></span>
+                    <span class="editor-control-dot"></span>
+                  </div>
+                </div>
+
+                <form id="inquiry-form" novalidate>
+                  <div class="code-grid">
+                    <div class="line-numbers">
+                      <span>1</span>
+                      <span>2</span>
+                      <span>3</span>
+                      <span>4</span>
+                      <span>5</span>
+                      <span>6</span>
+                      <span>7</span>
+                      <span>8</span>
+                    </div>
+
+                    <div class="code-content">
+                      <div class="code-line">
+                        <span class="syntax-brace">{</span>
+                      </div>
+                      <div class="code-line indent-1">
+                        <span class="syntax-key">"sender_name"</span>: <span class="syntax-brace">"</span><input
+                          type="text" id="form-name" class="code-input" placeholder="Your Name" required /><span
+                          class="syntax-brace">",</span>
+                        <span class="error-msg" id="error-name" style="margin-left: 12px;">Name is required</span>
+                      </div>
+                      <div class="code-line indent-1">
+                        <span class="syntax-key">"sender_email"</span>: <span class="syntax-brace">"</span><input
+                          type="email" id="form-email" class="code-input" placeholder="email@example.com"
+                          required /><span class="syntax-brace">",</span>
+                        <span class="error-msg" id="error-email" style="margin-left: 12px;">Valid email is
+                          required</span>
+                      </div>
+                      <div class="code-line indent-1">
+                        <span class="syntax-key">"inquiry_type"</span>: <span class="syntax-brace">"</span><select
+                          id="form-type" class="code-input code-select">
+                          <option value="Internship opportunity">Internship Opportunity</option>
+                          <option value="Research Collaboration">Research Collaboration</option>
+                          <option value="Freelance Development">Freelance Development</option>
+                          <option value="General Inquiry">General Inquiry</option>
+                        </select><span class="syntax-brace">",</span>
+                      </div>
+                      <div class="code-line indent-1">
+                        <span class="syntax-key">"message_details"</span>: <span class="syntax-brace">"</span><input
+                          type="text" id="form-message" class="code-input" style="width: 250px;"
+                          placeholder="Write brief details..." required /><span class="syntax-brace">"</span>
+                        <span class="error-msg" id="error-message" style="margin-left: 12px;">Message is required</span>
+                      </div>
+                      <div class="code-line">
+                        <span class="syntax-brace">}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Form Console Prompt -->
+                  <div class="form-run-console">
+                    <div
+                      style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                      <span class="console-log">Console: Press run to dispatch</span>
+                      <button type="submit" class="run-btn" id="submit-btn">
+                        <i class="bx bx-play"></i>
+                        <span>Run Request</span>
+                      </button>
+                    </div>
+                    <div id="console-logs-stream" class="console-log"
+                      style="font-family: monospace; font-size: 11px; min-height: 20px;">
+                      // Ready for POST request transmission.
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Success message overlay -->
+              <div class="success-overlay" id="success-overlay">
+                <div class="success-icon">
+                  <i class="bx bx-mail-send"></i>
+                </div>
+                <h3>Transmission Received</h3>
+                <p>Inquiry validated and logged. Expected response: within 24 hours.</p>
+                <button class="btn btn-secondary" style="margin-top: 24px;" id="reset-form-btn">Submit Another</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <p>© 2026 Druva Kiran J</p>
+      <p>B.Tech AI & Data Science Student & Developer</p>
+    </div>
+  </footer>
+
+  <!-- Dynamic Slide-out Case Study Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <div class="project-drawer" id="project-drawer">
+    <div class="drawer-header">
+      <div>
+        <span
+          style="font-family: var(--font-display); font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--indigo-glow); letter-spacing: 0.1em;">Case
+          Study Detail</span>
+        <h3 id="drawer-title">Project Name</h3>
+      </div>
+      <button class="drawer-close" id="drawer-close" aria-label="Close details overlay"><i class="bx bx-x"></i></button>
+    </div>
+
+    <div class="drawer-body">
+
+      <!-- Metadata grid -->
+      <div class="drawer-meta-grid">
+        <div class="drawer-meta-item">
+          <span>Role</span>
+          <p id="drawer-role">Developer</p>
+        </div>
+        <div class="drawer-meta-item">
+          <span>Timeline</span>
+          <p id="drawer-timeline">Spring 2026</p>
+        </div>
+        <div class="drawer-meta-item">
+          <span>Category</span>
+          <p id="drawer-category">Engineering</p>
+        </div>
+        <div class="drawer-meta-item">
+          <span>Status</span>
+          <p id="drawer-status" style="color: var(--sky-glow);">Active</p>
+        </div>
+      </div>
+
+      <!-- Tech tags -->
+      <div class="drawer-section">
+        <h4>Technologies</h4>
+        <div class="project-card-tags" id="drawer-tags">
+          <!-- tags populated dynamically -->
+        </div>
+      </div>
+
+      <!-- System architecture pre -->
+      <div class="drawer-section">
+        <h4>System Topology Map</h4>
+        <div class="architecture-box">
+          <pre id="drawer-architecture">
+              Topology diagram loading...
+            </pre>
+        </div>
+      </div>
+
+      <!-- SCARL Details -->
+      <div class="drawer-section">
+        <h4>Case Study Narrative (S.C.A.R.L)</h4>
+        <div class="scarl-timeline">
+
+          <div>
+            <span class="scarl-label">Situation</span>
+            <p class="scarl-text" id="drawer-scarl-situation">Situation description...</p>
+          </div>
+
+          <div>
+            <span class="scarl-label">Challenge</span>
+            <p class="scarl-text" id="drawer-scarl-challenge">Challenge description...</p>
+          </div>
+
+          <div>
+            <span class="scarl-label">Action</span>
+            <p class="scarl-text" id="drawer-scarl-action">Action description...</p>
+          </div>
+
+          <div>
+            <span class="scarl-label">Result</span>
+            <p class="scarl-text scarl-text-result" id="drawer-scarl-result">Result description...</p>
+          </div>
+
+          <div>
+            <span class="scarl-label">Learnings</span>
+            <p class="scarl-text" id="drawer-scarl-learnings">Learnings description...</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="drawer-footer">
+      <a id="drawer-github-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
+        style="flex: 1; justify-content: center;"><i class="bx bxl-github"></i> Source Repository</a>
+      <button class="btn btn-primary" id="drawer-return-btn" style="flex: 1; justify-content: center;">Return to
+        grid</button>
+    </div>
+  </div>
+
+  <!-- Custom Interaction Script -->
+  <script type="module" src="/script.js"></script>
+</body>
+
 </html>
